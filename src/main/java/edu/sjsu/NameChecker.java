@@ -13,6 +13,15 @@ public class NameChecker {
     public static boolean check(String input) {
         // TODO: implement
 
-        return false;
+        if(input.length() < 2 || input.length() > 40){
+            return false;
+        }
+
+        if(input.charAt(0) == '-' || input.charAt(0) == '\''){
+            return false;
+        }
+        
+        // if returns true, its valid input else its invalid
+        return input.matches("^[a-zA-Z]+(?:-[a-zA-Z]+)*[']?[a-zA-Z]*$");
     }
 }
